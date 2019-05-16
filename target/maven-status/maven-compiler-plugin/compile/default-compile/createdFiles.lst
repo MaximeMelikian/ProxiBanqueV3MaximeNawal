@@ -1,0 +1,17 @@
+org\banque\entity\Conseiller.class
+ws\rest\wservice.class
+org\banque\persistence\BanqueDAO.class
+ws\rest\wserviceImp.class
+org\banque\entity\Client.class
+org\banque\persistence\BanqueDAOImpl.class
+org\banque\service\BanqueService.class
+org\banque\entity\Depot.class
+org\banque\entity\CompteEpargne.class
+org\banque\entity\Retrait.class
+org\banque\entity\Test.class
+org\banque\entity\Entreprise.class
+org\banque\entity\Particulier.class
+org\banque\service\BanqueServiceImpl.class
+org\banque\entity\Compte.class
+org\banque\entity\Operation.class
+org\banque\entity\CompteCourant.class

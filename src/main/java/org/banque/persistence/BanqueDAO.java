@@ -10,8 +10,8 @@ public interface BanqueDAO {
 
 	public Client chercherParId(Long idClient);
 
-//	public void modifierClient(Long idClient, String nouveauNom);
-//
+	public void modifierClient(Long idClient, String nouveauNom);
+
 	public void supprimerClient(Long idClient);
 
 	public List<Client> afficherTousClients();

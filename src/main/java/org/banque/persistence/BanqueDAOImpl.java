@@ -63,29 +63,29 @@ public class BanqueDAOImpl implements BanqueDAO {
 		return client;
 	}
 
-//	@Override
-//	public void modifierClient(Long idClient, String nouveauNom) {
-//		EntityManager em2 = emf.createEntityManager();
-//		EntityTransaction txn1 = em2.getTransaction();
-//		try {
-//			txn1.begin();
-//			client = em2.find(Client.class, idClient);
-//			client.setNom(nouveauNom);
-//			txn1.commit();
-//
-//		} catch (Exception e) {
-//			if (txn1 != null) {
-//				txn1.rollback();
-//			}
-//			e.printStackTrace();
-//
-//		} finally {
-//			if (em2 != null) {
-//				em2.close();
-//			}
-//		}
-//
-//	}
+	@Override
+	public void modifierClient(Long idClient, String nouveauNom) {
+		EntityManager em2 = emf.createEntityManager();
+		EntityTransaction txn1 = em2.getTransaction();
+		try {
+			txn1.begin();
+			client = em2.find(Client.class, idClient);
+			client.setNom(nouveauNom);
+			txn1.commit();
+
+		} catch (Exception e) {
+			if (txn1 != null) {
+				txn1.rollback();
+			}
+			e.printStackTrace();
+
+		} finally {
+			if (em2 != null) {
+				em2.close();
+			}
+		}
+
+	}
 
 	@Override
 	public void supprimerClient(Long idClient) {

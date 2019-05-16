@@ -45,18 +45,19 @@ public class wserviceImp implements wservice {
 		return Response.ok().build();
 	}
 
+
 	@Override
 	public Response modifierClient(Client updatedclient) {
 		Response response = null;
 		Client client = bs.chercherClient(updatedclient.getIdClient());
 		if (client != null) {
-			bs.creerClient(updatedclient);
+			bs.modifierClient(updatedclient.getIdClient(), updatedclient.getNom());;
 			response = Response.ok().build();
 		} else {
 			response = Response.notModified().build();
 		}
 
 		return response;
-	}
 
-}
+
+}}

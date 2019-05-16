@@ -24,12 +24,12 @@ public class BanqueServiceImpl implements BanqueService {
 		return dao.chercherParId(idClient);
 	}
 
-//	@Override
-//	public void modifierClient(Long idClient, String nouvNom) {
-//		dao.modifierClient(idClient, nouvNom);
-//
-//	}
-//
+	@Override
+	public void modifierClient(Long idClient, String nouvNom) {
+		dao.modifierClient(idClient, nouvNom);
+
+	}
+
 	@Override
 	public void supprimerClient(Long idClient) {
 		dao.supprimerClient(idClient);

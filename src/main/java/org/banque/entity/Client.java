@@ -1,23 +1,38 @@
 package org.banque.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+
 /**
- * La classe Client est un javabean qui regroupe toutes les informations concernant un client
- * 
+ * La classe Client est un javabean qui regroupe toutes les informations
+ * concernant un client 
+ * elle est classe mère de la classe Entreprise et la
+ * classe Particulier
  * 
  * @author Nawal et Maxime
  */
 @Entity
 @XmlRootElement(name = "client")
 @XmlAccessorType(XmlAccessType.FIELD)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "Type_Client", discriminatorType = DiscriminatorType.STRING)
 public class Client implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +44,14 @@ public class Client implements Serializable {
 	private String codePostal;
 	private String ville;
 	private String tel;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "conseiller_id")
+	private Conseiller conseiller;
+	
+	@OneToMany(mappedBy = "client",cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	private Set<Compte> compte = new HashSet<Compte>();
 
 	// constructeur
 	public Client() {
@@ -58,9 +81,25 @@ public class Client implements Serializable {
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.tel = tel;
+		
 	}
 
-//getters & setters
+public Client(Long idClient, String nom, String prenom, String email, String adresse, String codePostal,
+			String ville, String tel, Conseiller conseiller, Set<Compte> compte) {
+		super();
+		this.idClient = idClient;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.tel = tel;
+		this.conseiller = conseiller;
+		this.compte = compte;
+	}
+
+	//getters & setters
 	public Long getIdClient() {
 		return idClient;
 	}

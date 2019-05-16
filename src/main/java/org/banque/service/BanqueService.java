@@ -10,7 +10,8 @@ public interface BanqueService {
 
 	public Client chercherClient(Long idClient);
 
-//	public void modifierClient(Long idClient,String nouvNom);
+	public void modifierClient(Long idClient,String nouvNom);
+	
 	public void supprimerClient(Long idClient);
 
 	public List<Client> afficherListe();

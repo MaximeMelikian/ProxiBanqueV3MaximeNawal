@@ -1,4 +1,4 @@
-package ws.rest;
+package org.banque.ws.rest;
 
 import java.util.List;
 

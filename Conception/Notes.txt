@@ -1,0 +1,29 @@
+﻿Créer un projet Maven
+
+Copier le fichier POM.xml à partir du dossier : base projet
+Modifier le nom du projet dans artifactID et final name. Alt+F5
+Java EE -> Generate Stubs
+
+copier le fichier web.xml dans src/main/webapp/WEB-INF
+
+copier le fichier cfx-servlet.xml dans src/main/webapp/WEB-INF
+
+copier le fichier persistence.xml dans src/main/resources/META-INF
+copier le fichier persistence.xml dans src/test/resources
+
+copier le fichier logback.xml dans src/main/resources/
+
+créer un packages org.formation.modele
+créer une classe Client
+créer une classe Compte
+
+créer un packages org.formation.persistance
+
+créer un packages org.formation.service
+créer un packages org.formation.ws
+créer un packages org.formation.presentation
+
+
+
+Readme avec info sur l'interrogation du webservice
+url et xml

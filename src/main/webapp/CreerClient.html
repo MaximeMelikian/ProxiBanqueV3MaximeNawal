@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nouveau Client</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<img src="logoProxiBanque.png">
+	<h1>Creation d'un nouveau client</h1>
+
+	<form action="ServletNouveauClient" method="post">
+		<input type="text" name="prenom"> Prénom <br>
+		<input type="text" name="nom"> Nom <br>
+		<input type="text" name="email"> E-mail <br>
+		<input type="text" name="adresse"> Adresse <br>
+		<input type="text" name="codePostal"> Code Postal <br>
+		<input type="text" name="ville"> Ville <br>
+		<input type="text" name="tel"> Téléphone <br>
+		
+		<input type="submit" value="Valider">
+		<input type="reset" value="Annuler">
+		
+
+	</form>
+
+<form action="ServletListeClients" method="post">
+<input type="submit" value="Retour à la liste des clients">
+</form>
+
+
+</body>
+</html>

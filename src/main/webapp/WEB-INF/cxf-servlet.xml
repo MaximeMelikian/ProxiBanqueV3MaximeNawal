@@ -21,7 +21,7 @@
 	</jaxrs:server>
 
 	<bean id="serviceBean"
-		class="ws.rest.wserviceImp"></bean>
+		class="org.banque.ws.rest.wserviceImp"></bean>
 
 
 	<!-- <bean id="jacksonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" /> -->

@@ -1,0 +1,81 @@
+
+-afficher client n:1
+
+GET
+
+URL:
+http://localhost:8080/ProxiBanqueV3MaximeNawal/services/wservice/clients/1
+
+RESTer Response:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<client>
+    <idClient>1</idClient>
+    <nom>ALOZADE</nom>
+    <prenom>nawal</prenom>
+    <adresse>1 rue Rivoli</adresse>
+</client>
+
+-Creer un client
+
+POST
+
+URL:
+http://localhost:8080/ProxiBanqueV3MaximeNawal/services/wservice/clients
+
+RESTer BODY:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<client>
+ 
+    <nom>MELIKIAN</nom>
+    <prenom>Maxime</prenom>
+    <adresse>5 rue st jacques</adresse>
+</client>
+
+RESTer Response:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<client>
+    <idClient>2</idClient>
+    <nom>MELIKIAN</nom>
+    <prenom>Maxime</prenom>
+    <adresse>5 rue st jacques</adresse>
+</client>
+
+Modifier l'adresse du client 2
+PUT
+
+URL:
+http://localhost:8080/ProxiBanqueV3MaximeNawal/services/wservice/clients
+
+
+RESTer BODY:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<client>
+    <idClient>2</idClient>
+    <nom>MELIKIAN</nom>
+    <prenom>Maxim</prenom>
+    <adresse>152 bis rue moliere </adresse>
+</client>
+
+Afficher la liste des clients:
+GET
+
+URL:
+http://localhost:8080/ProxiBanqueV3MaximeNawal/services/wservice/clients
+
+RESTer Response:
+<?xml version="1.0" encoding="UTF-8"?>
+<clients>
+    <client>
+        <idClient>1</idClient>
+        <nom>ALOZADE</nom>
+        <prenom>nawal</prenom>
+        <adresse>1 rue Rivoli</adresse>
+    </client>
+    <client>
+        <idClient>2</idClient>
+        <nom>MELIKIAN</nom>
+        <prenom>Maxime</prenom>
+        <adresse>5 rue st jacques</adresse>
+    </client>
+</clients>
+
